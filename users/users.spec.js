@@ -19,7 +19,8 @@ describe("auth", () => {
         .post("/api/auth/register")
         .send(newUser1)
         .then(res => {
-          test = expect(res.body.username).toBe(newUser1.username)
+
+          expect(res.body.username).toBe(newUser1.username)
         });
     });
     test("should return status (201)", async () => {
@@ -30,18 +31,24 @@ describe("auth", () => {
     });
   });
 
-  describe("login", () => {
-    test("should return username", async () => {
+  describe("login test", () => {
+    beforeEach(async () => {
       await request(server)
       .post('/api/auth/register')
       .send(newUser2)
-      .then(res => expect(res.body.username).toBe(newUser2.username));
     });
+
     test("should return a (200) status", async () => {
       await request(server)
       .post("/api/auth/login")
       .send(newUser2)
       .then(res => expect(res.status).toBe(200));
+    });
+    test("should return a token", async () => {
+      await request(server)
+      .post("/api/auth/login")
+      .send(newUser2)
+      .then(res => expect(res.body.token).toBeTruthy());
     });
   });
 });
