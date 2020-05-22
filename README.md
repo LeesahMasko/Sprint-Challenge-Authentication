@@ -16,12 +16,12 @@ The Minimum Viable Product must be completed in three hours.
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your _Team Lead_ as collaborator on Github.
-- [ ] Clone your forked version of the Repository.
-- [ ] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
-- [ ] Implement the project on this Branch, committing changes regularly.
-- [ ] Push commits: git push origin `firstName-lastName`.
+- [X] Create a forked copy of this project.
+- [X] Add your _Team Lead_ as collaborator on Github.
+- [X] Clone your forked version of the Repository.
+- [X] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
+- [X] Implement the project on this Branch, committing changes regularly.
+- [X] Push commits: git push origin `firstName-lastName`.
 
 Follow these steps for completing your project.
 
@@ -38,13 +38,21 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What is the purpose of using _sessions_?
+- [1] What is the purpose of using _sessions_?
 
-- [ ] What does bcrypt do to help us store passwords in a secure manner.
+  Sessions provide a way to persist data across requests.  Sessions make it easy to save authentication information, so there is no need to re-enter credentials on every new request the client makes to the server.
 
-- [ ] What does bcrypt do to slow down attackers?
+- [2] What does bcrypt do to help us store passwords in a secure manner.
 
-- [ ] What are the three parts of the JSON Web Token?
+  Bcrypt has a password hashing function, it implements salting both manually and automatically and does accumulative hashing rounds.
+
+- [3] What does bcrypt do to slow down attackers?
+
+  Bycrypt has an algorithm that hashes the information for multiple rounds means an attacker needs to have the hash, know the algorithm used, and how many rounds were used to generate the hash in the first place.
+
+- [4] What are the three parts of the JSON Web Token?
+
+  A JWT is a string that has three parts separated by a period. The header, the payload and the signature.
 
 ## Minimum Viable Product
 
